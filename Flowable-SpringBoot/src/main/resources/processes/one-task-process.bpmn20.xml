@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<definitions
+        xmlns="http://www.omg.org/spec/BPMN/20100524/MODEL"
+        xmlns:flowable="http://flowable.org/bpmn"
+        targetNamespace="Examples">
+
+    <process id="oneTaskProcess" name="单任务流程">
+        <startEvent id="theStart" name="开始节点" />
+        <sequenceFlow id="flow1" sourceRef="theStart" targetRef="theTask" />
+        <userTask id="theTask" name="我的任务" flowable:assignee="${person.id}" />
+        <sequenceFlow id="flow2" sourceRef="theTask" targetRef="theEnd" />
+        <endEvent id="theEnd" name="结束节点" />
+    </process>
+
+</definitions>
